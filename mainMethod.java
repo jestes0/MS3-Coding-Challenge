@@ -7,8 +7,6 @@
  * 
  */
 
-package ms3_Challenge;
-
 //Import Java Elements
 import java.io. * ;
 import java.nio.charset.StandardCharsets;
