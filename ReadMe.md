@@ -28,6 +28,13 @@ From there you have two options of running the program:
 2. Ensure all libraries have been carried over sucessfully.
 3. Compile and Test Using Eclipse
 
+## Design Choices
+
+I thought of a few options when I first read through the problem. My intial solution involed using two lists to sort through good and bad data before writing them to their respective locations. The problem I realized with it is that a lot of memory would be required involving huge amounts of data. So, thinking of that, I decided to implement a line-by-line processor and use a list only for the good data, which comes in handy on performing batch SQL statements.
+
+For Reading and writing the files, I used an Open Source Library called OpenCSV. I chose it over hard-coded Java methods, such as scanner, to improve readability of the content and to ensure that I did not use loops that would cause an O(n^2) algorithm. For reading in the SQlite data, I used JDBC and the SQLite jar files for functionality and to implement SQL queries.
+
+I wanted to process as much data as I could within a short amount of time to ensure the program could scale to huge data sets. By utilizing the list of good data as well as the batch commands in Sqlite, I was able to quickly process data in a short amount of time while reducing the amount of memory required by ommitting the bad data items. Upon testing, the algorithm's worst case complexity is O(n), and the execution time for 6002 lines of code came to an average of 670 milliseconds, which is .67 seconds.
 
 ## Assumptions
 
