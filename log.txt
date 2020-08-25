@@ -1,0 +1,3 @@
+Total Recieved Records: 6002
+Sucessful Records: 4870
+Failed Records: 1132
